@@ -1,0 +1,95 @@
+/*
+ * session_read_data.cc
+ *
+ *  Created on: 14 Jul 2015
+ *      Author: root
+ */
+#include <crc.h>
+#include <session.h>
+
+#include "sess_read_data.h"
+#include "F4_RTC.h"
+
+cSessReadData::cSessReadData(duplexInterface * interface) : cSession(interface)
+{
+}
+
+bool cSessReadData::execute()
+{
+	bool status = false;
+
+    diag_printf("Executing the cSessReadData session\n");
+    cyg_uint8 buff[512];
+
+    buff[0] = 0xF7;
+    cyg_uint32 len = waitReply(buff,1,sizeof(buff));//send the device serial as acknowledgment
+
+    if(len)
+    {
+    	if(handle_response(buff,len))
+    	{
+    	    diag_printf("Valid data received len : %d, sending acknowledgment\n",len);
+    	    status = true;
+    		cyg_uint8 ACK[1] = {0xF7};
+            mIf->transmit(ACK,sizeof(ACK));
+    	}
+    }
+
+	return status;
+}
+
+bool cSessReadData::handle_response(cyg_uint8 * buff, cyg_uint32 buff_len)
+{
+	cyg_uint16 yy,mm,dd,h,m,s;
+
+		yy = (cyg_uint16) buff[0];
+		if(yy < 1900)
+			return false;
+
+		mm = strtoul(argv[2],NULL,10);
+		if(mm > 12)
+			return;
+		term << term.format("mm : %d\n", mm);
+
+		dd = strtoul(argv[3],NULL,10);
+		if(dd > 31)
+			return;
+		term << term.format("dd : %d\n", dd);
+
+		h = strtoul(argv[4],NULL,10);
+		if(h > 24)
+			return;
+		term << term.format("h  : %d\n", h);
+
+		m = strtoul(argv[5],NULL,10);
+		if(m > 60)
+			return;
+		term << term.format("m  : %d\n", m);
+
+		s = strtoul(argv[6],NULL,10);
+		if(s > 60)
+			return;
+		term << term.format("s  : %d\n", s);
+
+		time_t timeVal;
+		struct tm info;
+		info.tm_year = yy - 1900;
+		info.tm_mon =  mm - 1;
+		info.tm_mday = dd;
+		info.tm_hour = h;
+		info.tm_min = m;
+		info.tm_sec = s;
+		timeVal = mktime(&info);
+
+		if(!cyg_libc_time_settime(timeVal))
+			term << GREEN("Updated time\n");
+		else
+			term << RED("Could not update time\n");
+}
+
+cSessReadData::~cSessReadData()
+{
+
+}
+
+

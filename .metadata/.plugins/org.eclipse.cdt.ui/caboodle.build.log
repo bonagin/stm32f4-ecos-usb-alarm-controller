@@ -1,0 +1,10 @@
+16:16:20 **** Incremental Build of configuration Release for project caboodle ****
+make all copy-library 
+make: Nothing to be done for `all'.
+cp libcaboodle.a ../lib/
+Build successfull...
+Build Timestamp: Mon Sep 28 16:16:20 SAST 2015
+ 
+
+16:16:20 Build Finished (took 52ms)
+

@@ -1,0 +1,718 @@
+#include <cyg/kernel/diag.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "nvm.h"
+#include "utils.h"
+#include "crc.h"
+
+cNVM * cNVM::__instance = NULL;
+
+
+/** Initialize storage class for non-volatile memory
+ * 	This class needs cyg_flash to be initialized
+ */
+void cNVM::init(cyg_uint32 infoAddr, cyg_uint32 ioStatusAddr)
+{
+	if(__instance == NULL)
+	{
+		__instance = new cNVM(infoAddr, ioStatusAddr);
+	}
+}
+
+cNVM::cNVM(cyg_uint32 infoAddr, cyg_uint32 ioStatusAddr) :
+								mInfoAddr(infoAddr),
+								mIOstatusAddr(ioStatusAddr)
+{
+	cyg_flash_info_t info;
+	cyg_flash_init(0);
+	int ret = cyg_flash_get_info(0,&info);
+	if(!ret)
+	{
+		diag_printf(YELLOW("SPI_FLASH Device:\n"));
+		diag_printf(" - Block:\n");
+		diag_printf("   - info's: %d\n",info.num_block_infos);
+		diag_printf("   - count : %d\n",info.block_info[0].blocks);
+		diag_printf("   - size  : 0x%8.0X\n",info.block_info[0].block_size);
+		diag_printf(" - START 0x%8.0X \n",info.start);
+		diag_printf(" - END   0x%8.0X \n",info.end);
+
+		//spi_dev_global_unprotect();
+	}
+	else
+	{
+		diag_printf("cyg_flash_info return value = %d\n", ret);
+		diag_printf("Could not initialize SPI flash\n");
+	}
+
+	diag_printf(YELLOW("cNVM:\n"));
+	diag_printf(" - Info @ 0x%08X", mInfoAddr);
+	sNvmData temp_data;
+	if(readNVM(&temp_data))
+	{
+		memcpy(&mNvmData, &temp_data, sizeof(sNvmData));
+		diag_printf(GREEN(" OK\n"));
+	}
+	else
+	{
+		diag_printf(RED(" RESET\n"));
+		setDefault();
+	}
+
+	diag_printf(" - IO   @ 0x%08X", mIOstatusAddr);
+	sDeviceStatus temp_stat;
+	if(readIO(&temp_stat))
+	{
+		mDevStat = temp_stat;
+		diag_printf(GREEN(" OK\n"));
+	}
+	else
+	{
+		diag_printf(RED(" RESET\n"));
+		for (int k = 0; k < NVM_MON_CNT; ++k)
+		{
+			mDevStat.analogSampleRange[k] = 5;
+			mDevStat.analogUpperLimit[k] = 500;
+			mDevStat.analogLowerLimit[k] = -500;
+
+		}
+
+		mDevStat.logPeriod = 600;
+
+		saveDeviceStatus();
+	}
+}
+
+cyg_bool cNVM::readNVM(sNvmData* temp_data)
+{
+	cyg_flash_read(mInfoAddr, (cyg_uint8 *) temp_data, sizeof(sNvmData), 0);
+
+	if (check_crc(temp_data))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+cyg_bool cNVM::readIO(sDeviceStatus * status)
+{
+	cyg_flash_read(mIOstatusAddr, (cyg_uint8 *) status, sizeof(sDeviceStatus), 0);
+
+	if (check_crc(status))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+void cNVM::setDefault()
+{
+	dbg_printf(1,"\nSetting defaults\n");
+	mNvmData.rmm_ser_num = 0x07654321;
+	mNvmData.box_ser_num = 0;
+
+	sSIMinfo sim;
+	sAPNinfo apn;
+	sServerInfo server;
+
+	memcpy(&mNvmData.simInfo, &sim, sizeof(sSIMinfo));
+	memcpy(&mNvmData.apnInfo, &apn, sizeof(sAPNinfo));
+	memcpy(&mNvmData.servers[0], &server, sizeof(sServerInfo));
+	memcpy(&mNvmData.servers[1], &server, sizeof(sServerInfo));
+
+	saveInfoData();
+}
+
+cyg_bool cNVM::check_crc(sNvmData * d)
+{
+	cyg_uint16 calc_crc = cCrc::ccitt_crc16((cyg_uint8 *)d,sizeof(sNvmData)-2);
+	if(calc_crc != d->crc)
+	{
+		dbg_printf(1, "NVM CRC Error 0x%04X != 0x%04X\n",calc_crc,d->crc);
+		return false;
+	}
+	return true;
+}
+
+cyg_bool cNVM::check_crc(sDeviceStatus * d)
+{
+	cyg_uint16 calc_crc = cCrc::ccitt_crc16((cyg_uint8 *)d,sizeof(sDeviceStatus)-2);
+	if(calc_crc != d->crc)
+	{
+		dbg_printf(1, "STAT CRC Error 0x%04X != 0x%04X\n",calc_crc,d->crc);
+		return false;
+	}
+	return true;
+}
+
+void cNVM::saveDeviceStatus()
+{
+	mDevStat.crc = cCrc::ccitt_crc16((cyg_uint8 *)&mDevStat,sizeof(sDeviceStatus)-2);
+
+	cyg_flash_erase(mIOstatusAddr, 1, 0);
+	cyg_flash_program(mIOstatusAddr, (cyg_uint8 *)&mDevStat, sizeof(sDeviceStatus), 0);
+}
+
+void cNVM::saveInfoData(cyg_uint64 boxNumber)
+{
+	if(boxNumber != 0xFFFFFFFF)
+		mNvmData.box_ser_num = boxNumber;
+
+	mNvmData.crc = cCrc::ccitt_crc16((cyg_uint8 *)&mNvmData,sizeof(sNvmData)-2);
+
+	cyg_flash_erase(mInfoAddr, 1, 0);
+	cyg_flash_program(mInfoAddr, (cyg_uint8 *)&mNvmData, sizeof(sNvmData), 0);
+}
+
+cyg_uint32 cNVM::getSerial()
+{
+	//double check the CRC of the NVM data before returning serial
+	if(!check_crc(&mNvmData))
+	{
+		sNvmData temp_data;
+		if(readNVM(&temp_data))
+		{
+			mNvmData = temp_data;
+		}
+		else
+		{
+			setDefault();
+		}
+	}
+
+	return mNvmData.rmm_ser_num;
+}
+
+void cNVM::setSerial(cyg_uint32 s)
+{
+	mNvmData.rmm_ser_num = s;
+	saveInfoData();
+}
+
+
+
+cyg_uint64 cNVM::getBox()
+{
+	//double check the CRC of the NVM data before returning serial
+	if(!check_crc(&mNvmData))
+	{
+		sNvmData temp_data;
+		if(readNVM(&temp_data))
+		{
+			mNvmData = temp_data;
+		}
+		else
+		{
+			setDefault();
+		}
+	}
+
+	return mNvmData.box_ser_num;
+}
+
+void cNVM::setBox(cyg_uint64 ser)
+{
+	saveInfoData(ser);
+}
+
+cyg_uint32 cNVM::getUpdatePeriod()
+{
+	return mNvmData.updatePeriod;
+}
+
+void cNVM::setUpdatePeriod(cyg_uint32 period)
+{
+	mNvmData.updatePeriod = period;
+	saveInfoData();
+}
+
+cNVM::sSIMinfo * cNVM::getSIMinfo()
+{
+	return &mNvmData.simInfo;
+}
+
+cNVM::sAPNinfo * cNVM::getAPNinfo()
+{
+	return &mNvmData.apnInfo;
+}
+
+cNVM::sSerialInfo * cNVM::getSerialInfo()
+{
+	return &mNvmData.serialInfo;
+}
+
+cNVM::sServerInfo * cNVM::getServerInfo(eServers id)
+{
+	return &mNvmData.servers[id];
+}
+
+cNVM::sDeviceStatus * cNVM::getDeviceStat()
+{
+	return &mDevStat;
+}
+
+void cNVM::nvmBuff(cTerm & t,int argc,char *argv[])
+{
+	if(!__instance)
+		return;
+
+	sDeviceStatus * stat = __instance->getDeviceStat();
+
+	printf(YELLOW("Log period: ")"%ds\n", stat->logPeriod);
+	printf(YELLOW("NVM data:\n"));
+	for(int k = 0; k < NVM_MON_CNT; k++)
+	{
+		printf("%2d: %0.1f %0.1f %0.1f\n", k,
+				stat->analogSampleRange[k],
+				stat->analogUpperLimit[k],
+				stat->analogLowerLimit[k]
+		);
+	}
+}
+
+void cNVM::debug(cTerm & t,int argc,char *argv[])
+{
+	if (!strcmp(argv[0],"flrd"))
+	{
+		if (argc > 2)
+		{
+			cyg_uint32 addr = (cyg_uint32)strtoul(argv[1],NULL,16);
+			cyg_uint32 num = (cyg_uint32)strtoul(argv[2],NULL,16);
+
+			cyg_uint8 buff[num];
+
+			int success = cyg_flash_read(addr, buff, num, NULL);
+			t << t.format("Reading: 0x%08X Success %d\n", addr, success);
+
+			if (!success)
+			{
+				diag_printf(GREEN("Read %d bytes from serial flash at address 0x%08X\n"), num, addr);
+				diag_dump_buf(buff, num);
+			}
+			else
+			{
+				diag_printf(RED("Error reading from serial flash! E:%d\n"), success);
+			}
+		}
+		else
+		{
+			t<<"You need to supply an address and number of bytes to read\n";
+		}
+	}
+	else if (!strcmp(argv[0],"flwr"))
+	{
+		if (argc > 3)
+		{
+			cyg_uint32 addr = (cyg_uint32)strtoul(argv[1],NULL,16);
+			cyg_uint32 num = (cyg_uint32)strtoul(argv[2],NULL,16);
+			cyg_uint8 val = (cyg_uint8)strtoul(argv[3],NULL,16);
+
+			cyg_uint8 buff[num];
+
+			memset(buff,val,num);
+
+
+			int success = cyg_flash_program(addr, buff, num, NULL);
+
+			if (success < 0)
+			{
+				diag_printf(RED("Error writing to serial flash! E:%d\n"), success);
+			}
+			else
+			{
+				diag_printf(GREEN("Wrote %d bytes of 0x%02X to serial flash at address 0x%08X\n"), num, val, addr);
+			}
+		}
+		else
+		{
+			t<<"You need to supply an address, number of bytes and value to write\n";
+		}
+	}
+	else if (!strcmp(argv[0],"fle"))
+	{
+		if (argc > 1)
+		{
+			cyg_uint32 addr = (cyg_uint32)strtoul(argv[1],NULL,16);
+
+			int success = cyg_flash_erase(addr, 0x10, NULL);
+
+			if (success != 0)
+			{
+				diag_printf(RED("Error erasing serial flash! E:%d\n"), success);
+			}
+			else
+			{
+				diag_printf(GREEN("Erased serial flash sector at address 0x%08X. E:0x%02X\n\n"), addr, success);
+			}
+		}
+		else
+		{
+			t<<"You need to supply an address in a sector to erase\n";
+		}
+	}
+}
+
+void cNVM::id(cTerm & t,int argc,char *argv[])
+{
+	if(!__instance)
+		return;
+
+	if (!strcmp("sn", argv[0]))
+	{
+		cyg_uint32 sn;
+		if(argc > 1)
+		{
+			sn = strtoul(argv[1],NULL,16);
+			__instance->setSerial(sn);
+			t<<"Changed Serial number to "<<sn<<"\n";
+		}
+		else
+		{
+			sn = __instance->getSerial();
+			t<<"Unit serial number is "<<sn<<"\n";
+		}
+		return;
+	}
+
+	if (!strcmp("box", argv[0]))
+	{
+		cyg_uint64 box;
+		if(argc > 1)
+		{
+			box = atoll(argv[1]);
+			__instance->setBox(box);
+			t<<t.format("Changed Box number to %010llu\n",box);
+		}
+		else
+		{;
+		t<<t.format("Unit Box number is %010llu\n", __instance->getBox());
+		}
+		return;
+	}
+}
+
+void cNVM::config(cTerm & t,int mArgc,char *mArgv[])
+{
+	if(!__instance)
+		return;
+
+	sAPNinfo * apn = __instance->getAPNinfo();
+	sSIMinfo * sim = __instance->getSIMinfo();
+
+	t<<(YELLOW("Server configuration:\n"));
+
+	int arg_idx = 1;
+	while(arg_idx < mArgc)
+	{
+		if(!strcmp("apn",mArgv[arg_idx]))
+		{
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting APN to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)apn->apn, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the APN name //
+				t<<"APN="<<apn->apn<<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("user",mArgv[arg_idx]))
+		{
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting User to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)apn->username, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the User name //
+				t<<"USER="<< apn->username <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("passwd",mArgv[arg_idx]))
+		{
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting Password to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)apn->password, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the password name //
+				t<<"PASSWD="<< apn->password <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("serverPipe",mArgv[arg_idx]))
+		{
+			sServerInfo * server = __instance->getServerInfo(serverPipe);
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting Pipe server to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)server->name, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"SERVER="<< server->name <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("portPipe",mArgv[arg_idx]))
+		{
+			sServerInfo * server = __instance->getServerInfo(serverPipe);
+			// Move onto the parameter//
+			arg_idx++;
+			int port;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				port = atoi(mArgv[arg_idx]);
+				t<<"Setting Pipe port to "<<port<<"\n";
+				server->port = port;
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"PORT="<< (int)server->port <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("serverMon",mArgv[arg_idx]))
+		{
+
+			sServerInfo * server = __instance->getServerInfo(serverMonitor);
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting Monitor server to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)server->name, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"SERVER="<< server->name <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("portMon",mArgv[arg_idx]))
+		{
+
+			sServerInfo * server = __instance->getServerInfo(serverMonitor);
+			// Move onto the parameter//
+			arg_idx++;
+			int port;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				port = atoi(mArgv[arg_idx]);
+				t<<"Setting Monitor port to "<<port<<"\n";
+				server->port = port;
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"PORT="<< (int)server->port <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("serverUp",mArgv[arg_idx]))
+		{
+
+			sServerInfo * server = __instance->getServerInfo(serverUpdate);
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting Update server to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)server->name, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"SERVER="<< server->name <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("portUp",mArgv[arg_idx]))
+		{
+
+			sServerInfo * server = __instance->getServerInfo(serverUpdate);
+			// Move onto the parameter//
+			arg_idx++;
+			int port;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				port = atoi(mArgv[arg_idx]);
+				t<<"Setting Update port to "<<port<<"\n";
+				server->port = port;
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"PORT="<< (int)server->port <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("cell",mArgv[arg_idx]))
+		{
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting SIM cell to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)sim->cell, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"SIM CELL="<< sim->cell <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("pin",mArgv[arg_idx]))
+		{
+			// Move onto the parameter//
+			arg_idx++;
+			if(arg_idx < mArgc)
+			{
+				// We have a parameter //
+				t<<"Setting SIM pin to "<<mArgv[arg_idx]<<"\n";
+				strcpy((char*)sim->pin, mArgv[arg_idx]);
+				__instance->saveInfoData();
+			}
+			else
+			{
+				// Just print the Server name //
+				t<<"SIM PIN="<<  sim->pin <<"\n";
+				return;
+			}
+		}
+		else if(!strcmp("default",mArgv[arg_idx]))
+		{
+			// Move onto the parameter//
+			t<<"Setting configuration defaults ...\n";
+			__instance->setDefault();
+		}
+
+		else
+		{
+			t<<"Unknown parameter "<<mArgv[arg_idx]<<"\n";
+		}
+		// move onto next param descriptor //
+		arg_idx++;
+	}
+
+	t<<t.format("%15s = ","SERIAL") << t.format("0x%08X \n", __instance->mNvmData.rmm_ser_num);
+	t<<t.format("%15s = ","BOX") << t.format( "%010llu\n\n", __instance->mNvmData.box_ser_num);
+	t<<"\n";
+	t<<t.format("%15s = ","Cell")	<< (char*)sim->cell <<"\n";
+	t<<t.format("%15s = ","PIN")	<< (char*)sim->pin <<"\n";
+	t<<"\n";
+	t<<t.format("%15s = ","APN")		<< (char*)apn->apn <<"\n";
+	t<<t.format("%15s = ","username")		<< (char*)apn->username <<"\n";
+	t<<t.format("%15s = ","password")		<< (char*)apn->password <<"\n";
+	t<<"\n";
+
+	sServerInfo * server = __instance->getServerInfo(serverMonitor);
+	t<<t.format("%15s = ","Monitor server")		<< (char*)server->name <<"\n";
+	t<<t.format("%15s = ","        port  ")		<<t.format("%04d", server->port)<<"\n";
+	t<<"\n";
+
+	server = __instance->getServerInfo(serverPipe);
+	t<<t.format("%15s = ","Pipe    server")		<< (char*)server->name <<"\n";
+	t<<t.format("%15s = ","        port  ")		<<t.format("%04d", server->port)<<"\n";
+	t<<"\n";
+
+	server = __instance->getServerInfo(serverUpdate);
+	t<<t.format("%15s = ","Update  server")		<< (char*)server->name <<"\n";
+	t<<t.format("%15s = ","        port  ")		<<t.format("%04d", server->port)<<"\n";
+}
+
+cNVM::sSIMinfo::sSIMinfo()
+{
+	cell[0] = 0;
+	pin[0] = 0;
+	puk[0] = 0;
+	puk_flag = 0;
+}
+
+cNVM::sAPNinfo::sAPNinfo()
+{
+	apn[0] = 0;
+	username[0] = 0;
+	password[0] = 0;
+}
+
+cNVM::sServerInfo::sServerInfo()
+{
+	name[0] = 0;
+	port = 0;
+}
+
+cNVM::sSerialInfo::sSerialInfo()
+{
+	baud = CYGNUM_SERIAL_BAUD_115200;
+	word_length =  CYGNUM_SERIAL_WORD_LENGTH_8;
+	parity = CYGNUM_SERIAL_PARITY_NONE;
+	stop = CYGNUM_SERIAL_STOP_1;
+}
+
+cyg_serial_info_t cNVM::sSerialInfo::get_serial_info()
+{
+	cyg_serial_info_t info;
+	info.flags = 0;
+	info.baud = (cyg_serial_baud_rate_t)baud;
+	info.word_length = (cyg_serial_word_length_t)word_length;
+	info.parity = (cyg_serial_parity_t)parity;
+	info.stop = (cyg_serial_stop_bits_t)stop;
+
+	return info;
+
+}
+
+cNVM::sNvmData::sNvmData()
+{
+	rmm_ser_num = 0x7FFFFFFF;
+	box_ser_num = 0;
+	updatePeriod = 0;
+	crc = 0;
+}
+
+cNVM::~cNVM()
+{
+}
+

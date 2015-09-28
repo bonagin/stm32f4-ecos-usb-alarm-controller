@@ -1,0 +1,28 @@
+16:23:39 **** Incremental Build of configuration Debug for project alarm controller ****
+make version all copy-binary 
+Generating version.h
+ 
+Building file: ../src/logger.cpp
+Invoking: Cross G++ Compiler
+arm-eabi-g++ -I../../ecos/ecos_install/include -I../../caboodle/include -I../../stm_usb/include -O0 -g3 -Wall -Wall -Wpointer-arith -Wundef -Woverloaded-virtual -Wno-write-strings -mcpu=cortex-m3 -mthumb -g -O2 -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions -c -fmessage-length=0 -MMD -MP -MF"src/logger.d" -MT"src/logger.d" -o "src/logger.o" "../src/logger.cpp"
+../src/logger.cpp: In static member function ‘static void cLOG::log_thread(cyg_addrword_t)’:
+../src/logger.cpp:54:8: warning: unused variable ‘_this’ [-Wunused-variable]
+../src/logger.cpp: In member function ‘void cLOG::write_log(cyg_uint8)’:
+../src/logger.cpp:83:39: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+../src/logger.cpp:67:34: warning: ‘t’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../src/logger.cpp
+ 
+Building target: alarm_controller.hex
+Invoking: Cross G++ Linker
+arm-eabi-g++ -L../../ecos/ecos_install/lib -L../../caboodle/lib -L../../stm_usb/lib -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -Wl,-static -Wl,-n -g -nostdlib  -T target.ld -o "alarm_controller.hex"  ./src/CMDtable.o ./src/F4_RTC.o ./src/init.o ./src/input_port.o ./src/led.o ./src/logger.o ./src/main.o ./src/monitor.o ./src/sess_read_data.o ./src/sess_write_data.o ./src/stm32cpu.o ./src/usb_device.o ./src/utils.o   -lstm_usb -lcaboodle
+Finished building target: alarm_controller.hex
+ 
+arm-eabi-objcopy -O binary ./alarm_controller.hex ../alarm_controller.bin
+ 
+   text	   data	    bss	    dec	    hex	filename
+  71148	   1296	  20032	  92476	  1693c	./alarm_controller.hex
+ 
+Build successfull...
+Version String : 
+Build Timestamp: Mon Sep 28 16:23:39 SAST 2015
+ 

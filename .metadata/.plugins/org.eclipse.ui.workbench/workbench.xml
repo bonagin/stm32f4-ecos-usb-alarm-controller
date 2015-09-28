@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="20" version="2.0">
+<workbenchAdvisor/>
+<window height="768" maximized="true" width="1024" x="366" y="22">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="260" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="188" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="144" y="30"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="38" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="82" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="90" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="214" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1442841701349" focus="true" label="Workspace - C/C++">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+<part id="23"/>
+<part id="24"/>
+<part id="25"/>
+<part id="26"/>
+<part id="27"/>
+<part id="28"/>
+<part id="29"/>
+<part id="30"/>
+<part id="31"/>
+<part id="32"/>
+<part id="33"/>
+<part id="34"/>
+<part id="35"/>
+<part id="36"/>
+<part id="37"/>
+<part id="38"/>
+<part id="39"/>
+<part id="40"/>
+<part id="41"/>
+<part id="42"/>
+<part id="43"/>
+<part id="44"/>
+<part id="45"/>
+<part id="46"/>
+<part id="47"/>
+<part id="48"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="init.cc" partName="init.cc" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/init.cc" title="init.cc" tooltip="Alarm Controller/src/init.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/init.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1982" selectionTopPixel="731"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="CMDtable.cpp" partName="CMDtable.cpp" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/CMDtable.cpp" title="CMDtable.cpp" tooltip="Alarm Controller/src/CMDtable.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/CMDtable.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="93" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="version.h" partName="version.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/version.h" title="version.h" tooltip="Alarm Controller/src/version.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/version.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32cpu.h" partName="stm32cpu.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/stm32cpu.h" title="stm32cpu.h" tooltip="Alarm Controller/src/stm32cpu.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/stm32cpu.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="118" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="TermCMD.h" partName="TermCMD.h" title="TermCMD.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/TermCMD.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/TermCMD.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="288" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="logger.h" partName="logger.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/logger.h" title="logger.h" tooltip="Alarm Controller/src/logger.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/logger.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="128" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="input_port.h" partName="input_port.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/input_port.h" title="input_port.h" tooltip="Alarm Controller/src/input_port.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/input_port.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="272" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="logger.cpp" partName="logger.cpp" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/logger.cpp" title="logger.cpp" tooltip="Alarm Controller/src/logger.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/logger.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3307" selectionTopPixel="978"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="utils.h" partName="utils.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/utils.h" title="utils.h" tooltip="Alarm Controller/src/utils.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/utils.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="makefile.defs" partName="makefile.defs" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/makefile.defs" title="makefile.defs" tooltip="Alarm Controller/makefile.defs" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/makefile.defs"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="makefile.init" partName="makefile.init" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/makefile.init" title="makefile.init" tooltip="Alarm Controller/makefile.init" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/makefile.init"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="305" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="session.h" partName="session.h" title="session.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/session.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/session.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="120" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="duplexInterface.h" partName="duplexInterface.h" title="duplexInterface.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/duplexInterface.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/duplexInterface.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="280" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="testjig_data.cc" partName="testjig_data.cc" path="/media/FAT32/GIT/rsm-device-testjig-software/Firmware/dev_jig/src/testjig_data.cc" title="testjig_data.cc" tooltip="dev_jig/src/testjig_data.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dev_jig/src/testjig_data.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="81"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="testjig_data.h" partName="testjig_data.h" path="/media/FAT32/GIT/rsm-device-testjig-software/Firmware/dev_jig/src/testjig_data.h" title="testjig_data.h" tooltip="dev_jig/src/testjig_data.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dev_jig/src/testjig_data.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="testjig.cc" partName="testjig.cc" path="/media/FAT32/GIT/rsm-device-testjig-software/Firmware/dev_jig/src/testjig.cc" title="testjig.cc" tooltip="dev_jig/src/testjig.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dev_jig/src/testjig.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="647" selectionTopPixel="85"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="session.h" partName="session.h" path="/media/FAT32/GIT/rsm-device-testjig-software/Firmware/dev_jig/src/session.h" title="session.h" tooltip="dev_jig/src/session.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dev_jig/src/session.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="460" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="testjig.h" partName="testjig.h" path="/media/FAT32/GIT/rsm-device-testjig-software/Firmware/dev_jig/src/testjig.h" title="testjig.h" tooltip="dev_jig/src/testjig.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dev_jig/src/testjig.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="session_performer.h" partName="session_performer.h" title="session_performer.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/session_performer.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/session_performer.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="input_port.cpp" partName="input_port.cpp" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/input_port.cpp" title="input_port.cpp" tooltip="Alarm Controller/src/input_port.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/input_port.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1417" selectionTopPixel="1663"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="string.h" partName="string.h" title="string.h" tooltip="/media/FAT32/GIT/alarm-controller/ecos/ecos_install/include/string.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/ecos/ecos_install/include/string.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="3643" selectionTopPixel="391"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="interface_usb.h" partName="interface_usb.h" title="interface_usb.h" tooltip="/media/FAT32/GIT/alarm-controller/stm_usb/include/interface_usb.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/stm_usb/include/interface_usb.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1481" selectionTopPixel="588"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="session_factory.h" partName="session_factory.h" title="session_factory.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/session_factory.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/session_factory.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="158" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="definitions.h" partName="definitions.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/definitions.h" title="definitions.h" tooltip="Alarm Controller/src/definitions.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/definitions.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="480" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="link_ip.h" partName="link_ip.h" title="link_ip.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/link_ip.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/link_ip.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="197"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="link_TCP.h" partName="link_TCP.h" title="link_TCP.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/link_TCP.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/link_TCP.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="10"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="link_UDP.h" partName="link_UDP.h" title="link_UDP.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/link_UDP.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/link_UDP.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32cpu.h" partName="stm32cpu.h" title="stm32cpu.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/stm32cpu.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/stm32cpu.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="rmmdict.h" partName="rmmdict.h" title="rmmdict.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/rmmdict.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/rmmdict.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="F4_BackupDomain.h" partName="F4_BackupDomain.h" title="F4_BackupDomain.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/F4_BackupDomain.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/F4_BackupDomain.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="kses_term.h" partName="kses_term.h" title="kses_term.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/kses_term.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/kses_term.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usb_device.cpp" partName="usb_device.cpp" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/usb_device.cpp" title="usb_device.cpp" tooltip="Alarm Controller/src/usb_device.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/usb_device.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2167" selectionTopPixel="1393"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hdlc_framer.h" partName="hdlc_framer.h" title="hdlc_framer.h" tooltip="/media/FAT32/GIT/alarm-controller/caboodle/include/hdlc_framer.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/media/FAT32/GIT/alarm-controller/caboodle/include/hdlc_framer.h" project="Alarm Controller"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usb_device.h" partName="usb_device.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/usb_device.h" title="usb_device.h" tooltip="Alarm Controller/src/usb_device.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/usb_device.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="sess_read_data.cc" partName="sess_read_data.cc" path="/media/FAT32/GIT/alarm-controller/caboodle/src/sess_read_data.cc" title="sess_read_data.cc" tooltip="caboodle/src/sess_read_data.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/caboodle/src/sess_read_data.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="213" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="sess_write_data.cc" partName="sess_write_data.cc" path="/media/FAT32/GIT/alarm-controller/caboodle/src/sess_write_data.cc" title="sess_write_data.cc" tooltip="caboodle/src/sess_write_data.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/caboodle/src/sess_write_data.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="218" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="interface_usb.cpp" partName="interface_usb.cpp" path="/media/FAT32/GIT/alarm-controller/stm_usb/src/interface_usb.cpp" title="interface_usb.cpp" tooltip="stm_usb/src/interface_usb.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/stm_usb/src/interface_usb.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="4472"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="monitor.cc" partName="monitor.cc" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/monitor.cc" title="monitor.cc" tooltip="Alarm Controller/src/monitor.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/monitor.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1553" selectionTopPixel="1089"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="monitor.h" partName="monitor.h" path="/media/FAT32/GIT/alarm-controller/Alarm Controller/src/monitor.h" title="monitor.h" tooltip="Alarm Controller/src/monitor.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Alarm Controller/src/monitor.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="297" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="sess_read_data.h" partName="sess_read_data.h" path="/media/FAT32/GIT/alarm-controller/caboodle/include/sess_read_data.h" title="sess_read_data.h" tooltip="caboodle/include/sess_read_data.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/caboodle/include/sess_read_data.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="221" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="sess_write_data.h" partName="sess_write_data.h" path="/media/FAT32/GIT/alarm-controller/caboodle/include/sess_write_data.h" title="sess_write_data.h" tooltip="caboodle/include/sess_write_data.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/caboodle/include/sess_write_data.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="225" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="session.cc" partName="session.cc" path="/media/FAT32/GIT/alarm-controller/caboodle/src/session.cc" title="session.cc" tooltip="caboodle/src/session.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/caboodle/src/session.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="66" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="session.h" partName="session.h" path="/media/FAT32/GIT/alarm-controller/caboodle/include/session.h" title="session.h" tooltip="caboodle/include/session.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/caboodle/include/session.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="163" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart_term.cc" partName="uart_term.cc" path="/media/FAT32/GIT/stm32f4_descovery/ksesTerminal/src/uart_term.cc" title="uart_term.cc" tooltip="ksesTerminal/src/uart_term.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ksesTerminal/src/uart_term.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="689" selectionTopPixel="1931"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usb_term.cpp" partName="usb_term.cpp" path="/media/FAT32/GIT/stm32f4_descovery/ksesTerminal/src/usb_term.cpp" title="usb_term.cpp" tooltip="ksesTerminal/src/usb_term.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ksesTerminal/src/usb_term.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7634" selectionTopPixel="5780"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="term.cc" partName="term.cc" path="/media/FAT32/GIT/stm32f4_descovery/ksesTerminal/src/term.cc" title="term.cc" tooltip="ksesTerminal/src/term.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ksesTerminal/src/term.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="585"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="TermCMD.cc" partName="TermCMD.cc" path="/media/FAT32/GIT/stm32f4_descovery/ksesTerminal/src/TermCMD.cc" title="TermCMD.cc" tooltip="ksesTerminal/src/TermCMD.cc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ksesTerminal/src/TermCMD.cc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4524" selectionTopPixel="3162"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="logger.cpp" partName="logger.cpp" path="/media/FAT32/GIT/stm32f4_descovery/f4_ftp/src/logger.cpp" title="logger.cpp" tooltip="f4_ftp/src/logger.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/f4_ftp/src/logger.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3372" selectionTopPixel="1215"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="input_port.cpp" partName="input_port.cpp" path="/media/FAT32/GIT/stm32f4_descovery/f4_ftp/src/input_port.cpp" title="input_port.cpp" tooltip="f4_ftp/src/input_port.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/f4_ftp/src/input_port.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3356" selectionTopPixel="2026"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (4 items)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="1005" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="300" org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="971" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.priorityField="30" org.eclipse.ui.ide.resourceField="90"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.cdt.ui.CPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<perspective_action id="org.eclipse.cdt.ui.CPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@31500940" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.6598425" ratioLeft="419" ratioRight="216" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.4992126" ratioLeft="317" ratioRight="318" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.SearchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.CElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.make.ui.makeTargetActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.buildConfigActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.NavigationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.OpenActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.CodingActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.presentation"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.cdt.ui.CView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.cdt.codan.internal.ui.views.ProblemDetails"/>
+<show_view_action id="org.eclipse.cdt.make.ui.views.MakeView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.cdt.ui.includeBrowser"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.ConvertToMakeWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewMakeFromExisting"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewCWizard1"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewCWizard2"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewSourceFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewHeaderFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewClassCreationWizard"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.cdt.make.ui.views.MakeView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.cdt.ui.CView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.17757988" ratioLeft="339" ratioRight="1570" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.90228015" ratioLeft="831" ratioRight="90" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="topRight" ratio="0.7496513" ratioLeft="1075" ratioRight="359" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.cdt.make.ui.views.MakeView" label="Make Target"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Alarm Controller/src/usb_device.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/stm_usb/src/interface_usb.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Alarm Controller/src/monitor.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/include/sess_read_data.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/link_ip.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/nvm.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/include/rmmdict.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/rmmdict.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/include/sess_write_data.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/stm32cpu.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/sess_write_data.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/session.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/sess_read_data.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/include/session.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Alarm Controller/makefile.defs"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Alarm Controller/makefile.init"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Alarm Controller/src/init.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ksesTerminal/src/uart_term.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ksesTerminal/src/usb_term.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ksesTerminal/src/term.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ksesTerminal/src/TermCMD.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/f4_ftp/src/logger.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/f4_ftp/src/input_port.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/f4_ftp/src/logger.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ksesTerminal/src/term.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ksesTerminal/src/TermCMD.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Alarm Controller/src/stm32cpu.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/sess_read_data.cc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/caboodle/src/sess_write_data.cc"/>
+</editors>
+<item historyLabel="monitor.h" index="2">
+<position info="not_deleted" x="297" y="0"/>
+</item>
+<item historyLabel="usb_device.cpp" index="0">
+<position info="not_deleted" x="312" y="4"/>
+</item>
+<item historyLabel="interface_usb.cpp" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="280" y="0"/>
+</item>
+<item historyLabel="link_ip.cc" index="4">
+<position info="not_deleted" x="20" y="20"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="280" y="0"/>
+</item>
+<item historyLabel="nvm.cc" index="5">
+<position info="not_deleted" x="29" y="25"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="280" y="0"/>
+</item>
+<item historyLabel="rmmdict.h" index="6">
+<position info="not_deleted" x="45" y="20"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="280" y="0"/>
+</item>
+<item historyLabel="rmmdict.cpp" index="7">
+<position info="not_deleted" x="0" y="20"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="280" y="0"/>
+</item>
+<item historyLabel="sess_write_data.h" index="8">
+<position info="not_deleted" x="309" y="0"/>
+</item>
+<item historyLabel="stm32cpu.cpp" index="9">
+<position info="not_deleted" x="61" y="21"/>
+</item>
+<item historyLabel="sess_write_data.h" index="8">
+<position info="not_deleted" x="309" y="0"/>
+</item>
+<item historyLabel="usb_device.cpp" index="0">
+<position info="not_deleted" x="1958" y="33"/>
+</item>
+<item historyLabel="usb_device.cpp" index="0">
+<position info="not_deleted" x="2098" y="0"/>
+</item>
+<item historyLabel="sess_write_data.h" index="8">
+<position info="not_deleted" x="225" y="0"/>
+</item>
+<item historyLabel="sess_write_data.cc" index="10">
+<position info="not_deleted" x="218" y="0"/>
+</item>
+<item historyLabel="session.cc" index="11">
+<position info="not_deleted" x="66" y="8"/>
+</item>
+<item historyLabel="usb_device.cpp" index="0">
+<position info="not_deleted" x="1958" y="33"/>
+</item>
+<item historyLabel="usb_device.cpp" index="0">
+<position info="not_deleted" x="1971" y="0"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="220" y="0"/>
+</item>
+<item historyLabel="sess_read_data.cc" index="12">
+<position info="not_deleted" x="145" y="0"/>
+</item>
+<item historyLabel="session.h" index="13">
+<position info="not_deleted" x="163" y="0"/>
+</item>
+<item historyLabel="sess_read_data.h" index="3">
+<position info="not_deleted" x="221" y="0"/>
+</item>
+<item historyLabel="sess_read_data.cc" index="12">
+<position info="not_deleted" x="213" y="0"/>
+</item>
+<item historyLabel="sess_write_data.h" index="8">
+<position info="not_deleted" x="225" y="0"/>
+</item>
+<item historyLabel="sess_read_data.cc" index="12">
+<position info="not_deleted" x="213" y="0"/>
+</item>
+<item historyLabel="sess_write_data.cc" index="10">
+<position info="not_deleted" x="218" y="0"/>
+</item>
+<item historyLabel="usb_device.cpp" index="0">
+<position info="not_deleted" x="1958" y="33"/>
+</item>
+<item historyLabel="makefile.defs" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="makefile.init" index="15">
+<position info="not_deleted" x="531" y="0"/>
+</item>
+<item historyLabel="init.cc" index="16">
+<position info="not_deleted" x="2115" y="0"/>
+</item>
+<item historyLabel="uart_term.cc" index="17">
+<position info="not_deleted" x="689" y="0"/>
+</item>
+<item historyLabel="usb_term.cpp" index="18">
+<position info="not_deleted" x="7577" y="0"/>
+</item>
+<item historyLabel="term.cc" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TermCMD.cc" index="20">
+<position info="not_deleted" x="4473" y="0"/>
+</item>
+<item historyLabel="uart_term.cc" index="17">
+<position info="not_deleted" x="689" y="0"/>
+</item>
+<item historyLabel="usb_term.cpp" index="18">
+<position info="not_deleted" x="7577" y="0"/>
+</item>
+<item historyLabel="logger.cpp" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="logger.cpp" index="21">
+<position info="not_deleted" x="1237" y="0"/>
+</item>
+<item historyLabel="input_port.cpp" index="22">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="logger.cpp" index="23">
+<position info="not_deleted" x="1237" y="0"/>
+</item>
+<item historyLabel="term.cc" index="24">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TermCMD.cc" index="25">
+<position info="not_deleted" x="4473" y="0"/>
+</item>
+<item historyLabel="stm32cpu.cpp" index="26">
+<position info="not_deleted" x="5748" y="0"/>
+</item>
+<item historyLabel="TermCMD.cc" index="25">
+<position info="not_deleted" x="4473" y="0"/>
+</item>
+<item historyLabel="sess_read_data.cc" index="27">
+<position info="not_deleted" x="213" y="0"/>
+</item>
+<item active="true" historyLabel="sess_write_data.cc" index="28">
+<position info="not_deleted" x="218" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="input_port.cpp" tooltip="f4_ftp/src/input_port.cpp">
+<persistable path="/f4_ftp/src/input_port.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="logger.cpp" tooltip="f4_ftp/src/logger.cpp">
+<persistable path="/f4_ftp/src/logger.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TermCMD.cc" tooltip="ksesTerminal/src/TermCMD.cc">
+<persistable path="/ksesTerminal/src/TermCMD.cc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="term.cc" tooltip="ksesTerminal/src/term.cc">
+<persistable path="/ksesTerminal/src/term.cc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_term.cpp" tooltip="ksesTerminal/src/usb_term.cpp">
+<persistable path="/ksesTerminal/src/usb_term.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="uart_term.cc" tooltip="ksesTerminal/src/uart_term.cc">
+<persistable path="/ksesTerminal/src/uart_term.cc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="alarm_controller.bin" tooltip="Alarm Controller/alarm_controller.bin">
+<persistable path="/Alarm Controller/alarm_controller.bin"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="session.h" tooltip="caboodle/include/session.h">
+<persistable path="/caboodle/include/session.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="session.cc" tooltip="caboodle/src/session.cc">
+<persistable path="/caboodle/src/session.cc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32cpu.cpp" tooltip="caboodle/src/stm32cpu.cpp">
+<persistable path="/caboodle/src/stm32cpu.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sess_write_data.h" tooltip="caboodle/include/sess_write_data.h">
+<persistable path="/caboodle/include/sess_write_data.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="rmmdict.cpp" tooltip="caboodle/src/rmmdict.cpp">
+<persistable path="/caboodle/src/rmmdict.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="rmmdict.h" tooltip="caboodle/include/rmmdict.h">
+<persistable path="/caboodle/include/rmmdict.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="nvm.cc" tooltip="caboodle/src/nvm.cc">
+<persistable path="/caboodle/src/nvm.cc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="link_ip.cc" tooltip="caboodle/src/link_ip.cc">
+<persistable path="/caboodle/src/link_ip.cc"/>
+</file>
+</mruList>
+</workbench>
