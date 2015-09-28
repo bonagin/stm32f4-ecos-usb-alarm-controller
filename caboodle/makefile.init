@@ -1,0 +1,15 @@
+version:	
+	@echo 'Generating version.h'
+	@echo ' '
+	@echo "#ifndef _VERSION_H" > ../src/version.h
+	@echo "#define _VERSION_H" >> ../src/version.h
+	@echo "#define VERSION_NUM $(VERSION) " >> ../src/version.h
+	@echo "#endif " >> ../src/version.h
+
+
+copy-library:	
+	cp libcaboodle.a ../lib/
+
+	@echo 'Build successfull...'
+	@echo 'Build Timestamp: '`date` 	
+	@echo ' '
