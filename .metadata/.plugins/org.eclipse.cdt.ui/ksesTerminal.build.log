@@ -1,6 +1,6 @@
-16:16:20 **** Incremental Build of configuration Release for project ksesTerminal ****
+10:12:55 **** Incremental Build of configuration Release for project ksesTerminal ****
 make all 
 make: Nothing to be done for `all'.
 
-16:16:20 Build Finished (took 51ms)
+10:12:55 Build Finished (took 51ms)
 

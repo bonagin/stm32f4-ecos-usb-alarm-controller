@@ -2,15 +2,22 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Monitor" key="selection"/>
+		<item value="read" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="read"/>
+			<item value=";&#x0A;&#x09;&#x09;term &lt;&lt; term.format(&quot;mm : %d\n&quot;, mm)"/>
+			<item value="strtoul(argv[2],NULL,10)"/>
+			<item value="LED"/>
+			<item value="LEM"/>
 			<item value="Testjig"/>
 		</list>
 		<list key="replacehistory">
+			<item value="(cyg_uint16) buff["/>
+			<item value="Mon"/>
 			<item value="Monitor"/>
 		</list>
 	</section>

@@ -1,4 +1,4 @@
-16:16:20 **** Incremental Build of configuration Release for project f4_ftp ****
+10:12:55 **** Incremental Build of configuration Release for project f4_ftp ****
 make version all copy-binary 
 Generating version.h
  
@@ -10,8 +10,8 @@ arm-eabi-objcopy -O binary ./f4_ftp.hex ../f4_ftp.bin
  
 Build successfull...
 Version String : 0x000001
-Build Timestamp: Mon Sep 28 16:16:20 SAST 2015
+Build Timestamp: Tue Sep 29 10:12:55 SAST 2015
  
 
-16:16:20 Build Finished (took 51ms)
+10:12:55 Build Finished (took 51ms)
 

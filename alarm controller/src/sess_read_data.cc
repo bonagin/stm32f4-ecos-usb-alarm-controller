@@ -21,7 +21,7 @@ bool cSessReadData::execute()
     diag_printf("Executing the cSessReadData session\n");
     cyg_uint8 buff[512];
 
-    buff[0] = 0xF7;
+    buff[0] = 0xb7;
     cyg_uint32 len = waitReply(buff,1,sizeof(buff));//send the device serial as acknowledgment
 
     if(len)
@@ -78,9 +78,12 @@ bool cSessReadData::handle_response(cyg_uint8 * buff, cyg_uint32 buff_len)
 
 		time_t now = time(NULL);
 		if(!cyg_libc_time_settime(timeVal))
-			diag_printf("Updated time : %s\n", asctime(localtime(&now)));
+			diag_printf("Updated time\n");
 		else
 			diag_printf("Could not update time\n");
+
+		cyg_thread_delay(10);
+		diag_printf("\t- %s\n", asctime(localtime(&now)));
 
 	return true;
 }

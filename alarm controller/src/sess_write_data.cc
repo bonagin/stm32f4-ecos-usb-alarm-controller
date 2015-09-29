@@ -19,25 +19,22 @@ bool cSessWriteData::execute()
 	diag_printf("Executing the cSessWriteData session\n");
     bool status = false;
     cyg_uint8 buff[512];
-	cyg_uint32 buff_len = 0;
 
     if(cInput::get()->getPortState(0))
-    	buff[0] = 0x00;
+  	  buff[0] = 0xFF;
     else
-    	buff[0] = 0xff;
+  	  buff[0] = 0x00;
 
-    diag_printf("cSessWriteData : Tx len = %d\n", buff_len);
     cyg_uint32 len = waitReply(buff,1,512);
 
-	if(len)
-	{
+	 if(len)
+	 {
 		if(buff[0] == 0xF7)
 		{
 			status = true;
 			diag_printf("Received acknowledgment\n");
 		}
-	}
-
+	 }
 
 	return status;
 }

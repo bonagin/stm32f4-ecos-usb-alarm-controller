@@ -1,10 +1,10 @@
-16:16:20 **** Incremental Build of configuration Release for project stm_usb ****
+10:12:55 **** Incremental Build of configuration Release for project stm_usb ****
 make all copy-library 
 make: Nothing to be done for `all'.
 cp libstm_usb.a ../lib/
 Build successfull...
-Build Timestamp: Mon Sep 28 16:16:20 SAST 2015
+Build Timestamp: Tue Sep 29 10:12:55 SAST 2015
  
 
-16:16:20 Build Finished (took 51ms)
+10:12:56 Build Finished (took 51ms)
 

@@ -19,6 +19,8 @@ class cUSBdevice : public cSessionFactory, public duplexInterface
 	cyg_cond_t mUSBCond;
 	cyg_mutex_t mUSBmutex;
 
+	bool mTXflag;
+
 	cyg_uint8 mStack[USB_STACK_SIZE];
 	cyg_thread mThread;
 	cyg_handle_t mThreadHandle;
@@ -36,7 +38,7 @@ public:
 	cyg_bool transmit(cyg_uint8 * buff,cyg_uint32 buff_len);
 	cyg_uint32 receive(cyg_uint8 * buff,cyg_uint32 buff_len);
 
-//	void StartWrite();
+	void StartWrite();
 
 	static void debug(cTerm & t,int argc,char *argv[]);
 

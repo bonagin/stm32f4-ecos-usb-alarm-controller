@@ -8,6 +8,7 @@
 
 #include "sess_write_data.h"
 #include "sess_read_data.h"
+#include "input_port.h"
 
 #define READ_DATA			0xA1
 #define WRITE_DATA			0xA8
@@ -26,6 +27,7 @@ cUSBdevice::cUSBdevice(cyg_uint32 serial, cSessionPerformer * performer) : cSess
 	mUSB = usbInterface::get();
 	mRXwaiting = false;
 	mRXlen = 0;
+	mTXflag = false;
 
 	cyg_mutex_init(&mUSBmutex);
 	cyg_cond_init(&mUSBCond, &mUSBmutex);
@@ -57,8 +59,8 @@ void cUSBdevice::run()
 {
 	if(!mUSB)
 	{
-		cyg_thread_delay(100);
-		return;
+	  cyg_thread_delay(100);
+	  return;
 	}
 
 	cyg_uint8 buff[USBRXBUFF_SIZE];
@@ -84,6 +86,7 @@ void cUSBdevice::run()
 		}
 		cyg_mutex_unlock(&mUSBmutex);
 	}
+
 }
 
 void cUSBdevice::createSession(cyg_uint8 * buff, cyg_uint32 buff_len, duplexInterface * interface)
@@ -115,13 +118,13 @@ void cUSBdevice::createSession(cyg_uint8 * buff, cyg_uint32 buff_len, duplexInte
 			if(s)
 				delete s;
 		}
-	}
+    }
 }
 
-//void cUSBdevice::StartWrite()
-//{
-//   cyg_uint8 buff
-//}
+void cUSBdevice::StartWrite()
+{
+     mTXflag = true;
+}
 
 cyg_uint32 cUSBdevice::receive(cyg_uint8 * buff,cyg_uint32 buff_len)
 {

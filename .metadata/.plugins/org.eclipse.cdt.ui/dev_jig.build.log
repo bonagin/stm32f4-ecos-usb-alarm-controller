@@ -1,4 +1,4 @@
-16:16:20 **** Incremental Build of configuration Release for project dev_jig ****
+10:12:55 **** Incremental Build of configuration Release for project dev_jig ****
 make version all copy-binary 
 Generating version.h
  
@@ -10,8 +10,8 @@ arm-eabi-objcopy -O binary ./dev_jig.hex ../dev_jig.bin
  
 Build successfull...
 Version String : 0.0.1
-Build Timestamp: Mon Sep 28 16:16:20 SAST 2015
+Build Timestamp: Tue Sep 29 10:12:55 SAST 2015
  
 
-16:16:20 Build Finished (took 101ms)
+10:12:55 Build Finished (took 101ms)
 

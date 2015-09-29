@@ -97,7 +97,7 @@ void cLOG::write_log(cyg_uint8 dir_)
     	direction = "CLOSED";
 
     memcpy(mTXbuff, direction, sizeof(direction));
-    //////SEND VIA USB///
+    mUSBdev->StartWrite();
 
 CHECK_SPACE:
 	if(stm32cpu::readflash(start_address) == 0xFFFFFFFF)
