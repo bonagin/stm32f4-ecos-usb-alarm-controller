@@ -1,7 +1,0 @@
-14:53:01 **** Clean-only build of configuration Debug for project Alarm Controller ****
-make clean 
-rm -rf  ./src/init.d ./src/main.d ./src/monitor.d ./src/utils.d  ./src/CMDtable.o ./src/F4_RTC.o ./src/init.o ./src/input_port.o ./src/led.o ./src/logger.o ./src/main.o ./src/monitor.o ./src/stm32cpu.o ./src/usb_device.o ./src/utils.o  ./src/CMDtable.d ./src/F4_RTC.d ./src/input_port.d ./src/led.d ./src/logger.d ./src/stm32cpu.d ./src/usb_device.d  alarm_controller.hex
- 
-
-14:53:01 Build Finished (took 53ms)
-

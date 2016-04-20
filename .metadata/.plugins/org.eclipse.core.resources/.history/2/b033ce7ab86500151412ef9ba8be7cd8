@@ -1,9 +1,0 @@
-eclipse.preferences.version=1
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/BINARY_NAME/delimiter=\:
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/BINARY_NAME/operation=append
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/BINARY_NAME/value=alarm_controller
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/PATH/delimiter=\:
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/PATH/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/PATH/value=/opt/ecos/gnutools/arm-eabi/bin\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/append=true
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1991306256/appendContributed=true
